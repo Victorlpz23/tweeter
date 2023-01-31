@@ -1,5 +1,7 @@
 require('dotenv').config()
 
+require('./configs/db.config');
+
 const express = require('express');
 const app = express();
 const logger = require('morgan');
@@ -9,6 +11,11 @@ app.use(logger('dev'));
 
 app.set('view engine', 'hbs');
 app.set('views', `${__dirname}/views`);
+
+app.use(express.static(`${__dirname}/public`));
+
+const router = require('./configs/router.config');
+app.use(router);
 
 
 
