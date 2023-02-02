@@ -4,20 +4,24 @@ const Schema = mongoose.Schema;
 const tweetSchema = new Schema({
   user: {
     type: "String",
-    require: "User is require"
+    required: true,
   },
   message:  {
     type: "String",
-    require: "Message is require"
+    require: true,
+    maxLength: 140,
   },
-  createdAt:  {
-    type: "String",
-    require: "Date is require"
-  },
-  fav:  {
-    type: "Boolean",
-  },
-})
+  // createdAt:  {
+  //   type: Date,
+  //   default: Date.now,
+  // },
+  likes: { 
+    type: Number,
+    default: 0 
+  }
+},
+{ timestamps: true }
+);
 
 const Tweet = mongoose.model('Tweet', tweetSchema);
 module.exports = Tweet;

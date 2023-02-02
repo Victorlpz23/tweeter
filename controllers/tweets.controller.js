@@ -21,7 +21,7 @@ module.exports.create = (req, res, next) => {
   res.render('tweets/new')
 };
 
-module.exports.Docreate = (req, res, next) => {
+module.exports.doCreate = (req, res, next) => {
    Tweet.create(req.body)
    .then(() => {
     res.redirect('/tweets')
@@ -31,7 +31,7 @@ module.exports.Docreate = (req, res, next) => {
 
 module.exports.update = (req, res, next) => {
   Tweet.findById(req.params.id)
-  .then(() => {
+  .then((tweet) => {
    res.render('tweets/edit', { tweet })
  })
  .catch((error) => console.log(error))
@@ -45,7 +45,8 @@ module.exports.doUpdate = (req, res, next) => {
  .catch((error) => console.log(error))
 }
 
-module.exports.doUpdate = (req, res, next) => {
+
+module.exports.delete = (req, res, next) => {
   Tweet.findByIdAndDelete(req.params.id)
   .then((tweet) => {
    res.redirect('/tweets')

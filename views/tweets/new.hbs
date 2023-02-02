@@ -1,1 +1,15 @@
-<form action="text">Nuevo tweet</form>
+
+
+<form action="/tweets" method="POST">
+  <div class="mb-3">
+    <label for="user" class="form-label">user</label>
+    <input name="user" type="text" class="form-control" id="user">
+  </div>
+  <div class="mb-3">
+    <label for="message" class="form-label">message</label>
+    <textarea name="message" class="form-control" id="message" rows="5">
+    </textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Create</button>
+</form>

@@ -2,6 +2,15 @@
 
 <ul>
   {{#each tweets as | tweet | }}
-  <li>{{tweet.user}}</li>
+  <li>Tweets de:<a href="/tweets/{{tweet.id}}"> {{ tweet.user }}</a></li>
+  <li>
+    {{#if tweet.updatedAt}} 
+    {{ tweet.updatedAt }}
+      {{ else }} 
+    {{ tweet.createdAt }}</li>
+    {{/if}}
   {{/each}}
 </ul>
+
+
+<a href="/tweets/new">Create a new Tweet</a>
