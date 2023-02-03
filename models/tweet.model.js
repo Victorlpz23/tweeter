@@ -8,13 +8,9 @@ const tweetSchema = new Schema({
   },
   message:  {
     type: "String",
-    require: true,
+    required: true,
     maxLength: 140,
   },
-  // createdAt:  {
-  //   type: Date,
-  //   default: Date.now,
-  // },
   likes: { 
     type: Number,
     default: 0 

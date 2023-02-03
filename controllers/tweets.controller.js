@@ -5,7 +5,7 @@ module.exports.list = (req, res, next) => {
     .then((tweets) => {
       res.render('tweets/list', { tweets })
     })
-    .catch((error) => console.log(error))
+    .catch(next) 
 };
 
 
@@ -14,7 +14,7 @@ module.exports.detail = (req, res, next) => {
    .then((tweet) => {
     res.render('tweets/detail', { tweet })
   })
-  .catch((error) => console.log(error))
+  .catch(next)
 };
 
 module.exports.create = (req, res, next) => {
@@ -26,7 +26,7 @@ module.exports.doCreate = (req, res, next) => {
    .then(() => {
     res.redirect('/tweets')
   })
-  .catch((error) => console.log(error))
+  .catch(next)
 }
 
 module.exports.update = (req, res, next) => {
@@ -34,7 +34,7 @@ module.exports.update = (req, res, next) => {
   .then((tweet) => {
    res.render('tweets/edit', { tweet })
  })
- .catch((error) => console.log(error))
+ .catch(next)
 }
 
 module.exports.doUpdate = (req, res, next) => {
@@ -42,7 +42,7 @@ module.exports.doUpdate = (req, res, next) => {
   .then((tweet) => {
    res.redirect('/tweets')
  })
- .catch((error) => console.log(error))
+ .catch(next)
 }
 
 
@@ -51,6 +51,6 @@ module.exports.delete = (req, res, next) => {
   .then((tweet) => {
    res.redirect('/tweets')
  })
- .catch((error) => console.log(error))
+ .catch(next)
 }
 

@@ -19,7 +19,11 @@ const router = require('./configs/router.config');
 app.use(router);
 
 
-
+app.use((err, req, res, next) => {
+  console.error(err)
+  res.status(500)
+  res.send("Ops, something went wrong!")
+});
 
 
 const port = process.env.PORT || 3000;
