@@ -1,16 +1,21 @@
-<h1>estas en list</h1>
+<h1>List of Tweets</h1>
 
 <ul>
   {{#each tweets as | tweet | }}
-  <li>Tweets de:<a href="/tweets/{{tweet.id}}"> {{ tweet.user }}</a></li>
+  <li>Tweets de: {{ tweet.user }}</a></li>
+  <li>{{ tweet.message }}</li>
   <li>
     {{#if tweet.updatedAt}} 
     {{ tweet.updatedAt }}
       {{ else }} 
     {{ tweet.createdAt }}</li>
     {{/if}}
+    <a href="/tweets/{{tweet.id}}">Detail</a>
+    <p></p>
   {{/each}}
 </ul>
+
+
 
 
 <a href="/tweets/new" class="btn btn-primary">Create a new Tweet</a>

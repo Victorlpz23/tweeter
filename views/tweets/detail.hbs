@@ -1,16 +1,16 @@
 <h1>User: {{tweet.user}}</h1>
 
 <ul>
-  <li>{{ tweet.user }}</li>
-  <li>{{ tweet.message }}</li>
-  <li>{{ tweet.createdAt }}</li>
-  <li>Likes: {{ tweet.likes }}</li>
+  <li>{{tweet.user}}</li>
+  <li>{{tweet.message}}</li>
+  <li>{{tweet.createdAt}}</li>
+  <li>Likes: {{tweet.likes}}</li>
 </ul>
 
 <form action="/tweets/{{tweet.id}}/update">
-<button class="btn btn-primary">Edit</button>
+  <button class="btn btn-primary">Edit</button>
 </form>
 
 <form action="/tweets/{{tweet.id}}/delete" method="post">
-<button class="btn btn-primary">Delete</button>
+  <button class="btn btn-primary">Delete</button>
 </form>

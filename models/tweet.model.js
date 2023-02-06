@@ -2,21 +2,21 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const tweetSchema = new Schema({
+  message: {
+    type: "String",
+    required: [true, "message is required"],
+    maxLength: [140, "max 140 chars"]
+  },
   user: {
     type: "String",
-    required: true,
+    required: [true, "user is required"]
   },
-  message:  {
-    type: "String",
-    required: true,
-    maxLength: 140,
-  },
-  likes: { 
+  likes: {
     type: Number,
-    default: 0 
+    default: 0
   }
 },
-{ timestamps: true }
+  { timestamps: true }
 );
 
 const Tweet = mongoose.model('Tweet', tweetSchema);
