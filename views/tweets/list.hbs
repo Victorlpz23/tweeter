@@ -1,19 +1,5 @@
 <h1>List of Tweets</h1>
 
-{{!-- <ul>
-  {{#each tweets as | tweet | }}
-  <li>Tweets de: {{ tweet.user }}</a></li>
-  <li>{{ tweet.message }}</li>
-  <li>
-    {{#if tweet.updatedAt}} 
-    {{ date tweet.updatedAt }}
-      {{ else }} 
-    {{ date tweet.createdAt }}</li>
-    {{/if}}
-    <a href="/tweets/{{tweet.id}}">Detail</a>
-    <p></p>
-  {{/each}}
-</ul> --}}
 {{#each tweets as | tweet | }}
 <div class="card border-dark mb-3" style="max-width: 18rem;">
   <div class="card-header bg-transparent border-0">
@@ -26,6 +12,7 @@
     <p class="card-text">{{ tweet.message }}</p>
   </div>
   <div class="card-footer bg-transparent border-0">{{ tweet.likes }}</div>
+  <a href="/tweets/{{tweet.id}}">Detail</a>
 </div>
  {{/each}}
 
