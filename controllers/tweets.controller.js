@@ -3,8 +3,9 @@ const mongoose = require('mongoose');
 
 module.exports.list = (req, res, next) => {
   Tweet.find()
+    .sort( { updatedAt: "desc" })
     .then((tweets) => {
-      res.render('tweets/list', { tweets: tweets.reverse() })
+      res.render('tweets/list', { tweets })
     })
     .catch(next) 
 };
