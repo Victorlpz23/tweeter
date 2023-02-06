@@ -1,4 +1,4 @@
-<h1>New Tweet</h1>
+{{!-- <h1>New Tweet</h1>
 
 {{#if errors}}
   <div class="alert alert-danger">
@@ -19,9 +19,9 @@
     </textarea>
   </div>
   <button type="submit" class="btn btn-primary">Create</button>
-</form>
+</form> --}}
 
-{{!-- <h1>New Tweet</h1>
+<h1>New Tweet</h1>
 
 {{#if errors}}
   <div class="alert alert-danger">
@@ -32,19 +32,13 @@
 <form action="/tweets" method="POST">
   <div class="mb-3">
     <label for="user" class="form-label">user</label>
-    <input type="email" value="{{tweet.user}}" name="user" type="text" class="form-control {{#if errors.user}}is-invalid{{/if}}" id="user">
+    <input type="user" value="{{tweet.user}}" name="user" type="text" class="form-control {{#if errors.user}}is-invalid{{/if}}" id="user">
     {{#if errors.user}}
       <div class="invalid-feedback">
         {{errors.user.message}}
       </div>
     {{/if}}
   </div>
-
-  <div class="mb-3">
-    <label for="image" class="form-label">image</label>
-    <input value="{{tweet.image}}" name="image" type="text" class="form-control {{#if errors.image}}is-invalid{{/if}}" id="image">
-  </div>
-
   <div class="mb-3">
     <label for="message" class="form-label">message</label>
     <textarea name="message" class="form-control {{#if errors.message}}is-invalid{{/if}}" id="message" rows="5">{{tweet.message}}</textarea>
@@ -56,4 +50,4 @@
   </div>
   
   <button type="submit" class="btn btn-primary">Create</button>
-</form> --}}
+</form>
