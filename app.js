@@ -2,6 +2,7 @@ require('dotenv').config()
 
 require('./configs/db.config');
 
+
 const express = require('express');
 const app = express();
 const logger = require('morgan');
@@ -9,7 +10,7 @@ const logger = require('morgan');
 app.use(express.urlencoded());
 app.use(logger('dev'));
 
-
+require('./configs/hbs.config');
 app.set('view engine', 'hbs');
 app.set('views', `${__dirname}/views`);
 

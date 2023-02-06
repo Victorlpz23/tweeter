@@ -6,9 +6,9 @@
   <li>{{ tweet.message }}</li>
   <li>
     {{#if tweet.updatedAt}} 
-    {{ tweet.updatedAt }}
+    {{ date tweet.updatedAt }}
       {{ else }} 
-    {{ tweet.createdAt }}</li>
+    {{ date tweet.createdAt }}</li>
     {{/if}}
     <a href="/tweets/{{tweet.id}}">Detail</a>
     <p></p>

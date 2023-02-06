@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 module.exports.list = (req, res, next) => {
   Tweet.find()
     .then((tweets) => {
-      res.render('tweets/list', { tweets })
+      res.render('tweets/list', { tweets: tweets.reverse() })
     })
     .catch(next) 
 };
