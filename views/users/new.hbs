@@ -7,7 +7,7 @@
   </div>
 {{/if}}
 
-<form action="/users" method="POST">
+<form action="/login" method="POST">
   <div class="mb-3">
     <label for="name" class="form-label">name</label>
     <input type="text" value="{{user.name}}" name="name" class="form-control {{#if errors.name}} is-invalid{{/if}}" id="name">
@@ -17,6 +17,7 @@
       </div>
     {{/if}}
   </div>
+
   <div class="mb-3">
     <label for="email" class="form-label">email</label>
     <input type="email" value="{{user.email}}" name="email" class="form-control {{#if errors.email}} is-invalid{{/if}}" id="email">
@@ -26,6 +27,7 @@
       </div>
     {{/if}}
   </div>
+
    <div class="mb-3">
     <label for="password" class="form-label">password</label>
     <input type="password" value="{{user.password}}" name="password" class="form-control {{#if errors.password}} is-invalid{{/if}}" id="password">
