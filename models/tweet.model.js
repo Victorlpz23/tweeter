@@ -5,7 +5,7 @@ const tweetSchema = new Schema({
   message: {
     type: "String",
     required: [true, "message is required"],
-    maxLength: [140, "max 140 chars"]
+    maxLength: [250, "max 250 chars"]
   },
   user: {
     type: "String",

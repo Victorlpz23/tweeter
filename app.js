@@ -7,10 +7,17 @@ const express = require('express');
 const app = express();
 const logger = require('morgan');
 
+require('./configs/hbs.config');
+
+const { session } = require('./configs/session.config')
+
+
+
 app.use(express.urlencoded());
 app.use(logger('dev'));
+app.use(session);
 
-require('./configs/hbs.config');
+
 app.set('view engine', 'hbs');
 app.set('views', `${__dirname}/views`);
 

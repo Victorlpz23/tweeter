@@ -1,31 +1,31 @@
-<h1>Login</h1>
-
+<h1 class="text-center">Login</h1>
 
 {{#if errors}}
   <div class="alert alert-danger">
     review form data
   </div>
 {{/if}}
+<div class="d-flex align-items-center flex-column mb-3">
+  <form action="/login" method="POST" style="width: 28rem;">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" value="{{user.email}}" name="email" class="form-control {{#if errors.email}} is-invalid{{/if}}" id="email">
+      {{#if errors.email}}
+        <div class="invalid-feedback">
+          {{errors.email.message}}
+        </div>
+      {{/if}}
+    </div>
 
-<form action="/login" method="POST">
-  <div class="mb-3">
-    <label for="email" class="form-label">email</label>
-    <input type="email" value="{{user.email}}" name="email" class="form-control {{#if errors.email}} is-invalid{{/if}}" id="email">
-    {{#if errors.email}}
-      <div class="invalid-feedback">
-        {{errors.email.message}}
-      </div>
-    {{/if}}
-  </div>
-
-   <div class="mb-3">
-    <label for="password" class="form-label">password</label>
-    <input type="password" value="{{user.password}}" name="password" class="form-control {{#if errors.password}} is-invalid{{/if}}" id="password">
-    {{#if errors.password}}
-      <div class="invalid-feedback">
-        {{errors.password.message}}
-      </div>
-    {{/if}}
-  </div>
-  <button type="submit" class="btn btn-primary">Enter</button>
-</form>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" value="{{user.password}}" name="password" class="form-control {{#if errors.password}} is-invalid{{/if}}" id="password">
+      {{#if errors.password}}
+        <div class="invalid-feedback">
+          {{errors.password.message}}
+        </div>
+      {{/if}}
+    </div>
+    <button type="submit" class="btn btn-primary">Enter</button>
+  </form>
+</div>

@@ -2,6 +2,8 @@
 
 const hbs = require('hbs');
 
+hbs.registerPartials(`${__dirname}/../views/partials`);
+
 
 hbs.registerHelper("date", (date) => {
   const minDiff = (Date.now() - date.getTime()) / 1000 / 60
