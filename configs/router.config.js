@@ -16,9 +16,9 @@ router.post('/tweets/:id', tweetsController.doUpdate);
 router.post('/tweets/:id/delete', tweetsController.delete);
 
 router.get('/users/new', usersController.create);
-router.post('/login', usersController.doCreate);
+router.post('/users', usersController.doCreate);
 router.get('/login', usersController.login);
-router.post('/tweets', usersController.doLogin);
+router.post('/login', usersController.doLogin);
 
 
 

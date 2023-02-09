@@ -11,7 +11,7 @@ module.exports.create = (req, res, next) => {
 module.exports.doCreate = (req, res, next) => {
   User.create(req.body)
     .then(() => {
-      res.redirect('/login')
+      res.redirect('/tweets')
     }).catch((err) => {
       if (err instanceof mongoose.Error.ValidationError) {
           res.render('users/new', { errors: err.errors, user: req.body })
@@ -34,8 +34,10 @@ module.exports.doLogin = (req, res, next) => {
     .then((ok) => {
       if (ok) {
       req.session.userId = user.id;
-      res.redirec('/tweets')
+      res.redirect('/tweets')
       }
     })
+    .catch(next)
   })
+  .catch(next)
 }

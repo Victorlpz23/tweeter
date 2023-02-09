@@ -9,13 +9,14 @@ const logger = require('morgan');
 
 require('./configs/hbs.config');
 
-const { session }  = require('./configs/session.config')
+const { session, loadSessionUser }  = require('./configs/session.config')
 
 
 
 app.use(express.urlencoded());
 app.use(logger('dev'));
 app.use(session);
+app.use(loadSessionUser);
 
 
 app.set('view engine', 'hbs');

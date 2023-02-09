@@ -7,7 +7,7 @@
   </div>
 {{/if}}
 <div class="d-flex align-items-center flex-column mb-3">
-  <form action="/login" method="POST"  style="width: 28rem;">
+  <form action="/users" method="POST"  style="width: 28rem;">
     <div class="mb-3">
       <label for="name" class="form-label">Name</label>
       <input type="text" value="{{user.name}}" name="name" class="form-control {{#if errors.name}} is-invalid{{/if}}" id="name">
