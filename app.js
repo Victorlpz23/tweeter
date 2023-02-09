@@ -9,7 +9,7 @@ const logger = require('morgan');
 
 require('./configs/hbs.config');
 
-const { session } = require('./configs/session.config')
+const { session }  = require('./configs/session.config')
 
 
 

@@ -32,11 +32,9 @@ module.exports.doLogin = (req, res, next) => {
     bcrypt
     .compare(req.body.password, user.password)
     .then((ok) => {
-      if (ok){
-
-
-        res.set('Set-Cookie', `sessionid=${sessionId}`)
-        res.redirec('/tweets')
+      if (ok) {
+      req.session.userId = user.id;
+      res.redirec('/tweets')
       }
     })
   })
